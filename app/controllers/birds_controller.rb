@@ -6,6 +6,7 @@ class BirdsController < ApplicationController
 
     def show
         bird = Bird.find(params[:id])
+        render json: bird
     rescue ActiveRecord::RecordNotFound
         render json: "Bird Not Found"
     end
